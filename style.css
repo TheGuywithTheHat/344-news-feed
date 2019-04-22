@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.content-container {
+    padding: 2em;
+}
+
+.center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.feed-card {
+    border: 1px solid black;
+    padding: 0 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #b12300;
+}
+
+a:hover {
+    color: #da6200;
+}
+
+.warning {
+    color: red;
+}
+
+.right {
+    float: right;
+}
+
+.margin-left {
+    margin-left: 1em;
+}
