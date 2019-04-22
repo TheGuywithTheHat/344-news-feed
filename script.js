@@ -44,6 +44,9 @@ async function signin() {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0',
             },
             body: JSON.stringify(credentials),
         });
@@ -132,7 +135,13 @@ function applyItems(items) {
 async function refreshFeeds() {
     if(currentUser !== undefined) {
         try {
-            favorites = await (await fetch('data/' + currentUser + '.json')).json();
+            favorites = await (await fetch('data/' + currentUser + '.json', {
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0',
+                }
+            })).json();
         } catch (err) {
             favorites = [];
         }
